@@ -1,5 +1,5 @@
 ---
-title: API Reference
+title: EasyPNR API Version 1.0
 
 language_tabs:
   - shell
@@ -9,7 +9,7 @@ language_tabs:
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  #- <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
   - errors
@@ -19,11 +19,11 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the EasyPNR API! Following this documentation you will be able to decode Amadeus, Sabre and Galileo PNRs directly on your application. You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+The EasyPNR API is a REST Server available at the endpoint [http://api.easypnr.com/v1](http://api.easypnr.com/v1/).
 
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+The API is pretty simple, but in case of problems or difficulties that you can face, contact us on [support@easypnr.com](mailto:support@easypnr.com) or using the form available on the [website](http://www.easypnr.com/contact]).
 
 # Authentication
 
@@ -186,4 +186,3 @@ This endpoint retrieves a specific kitten.
 Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to retrieve
-
