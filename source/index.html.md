@@ -2,10 +2,8 @@
 title: EasyPNR API Version 1.0
 
 language_tabs:
-  - shell
+  - curl
   - ruby
-  - python
-  - javascript
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -19,11 +17,11 @@ search: true
 
 # Introduction
 
-Welcome to the EasyPNR API! Following this documentation you will be able to decode Amadeus, Sabre and Galileo PNRs directly on your application. You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Welcome to the **EasyPNR API** documentation! Following the further instructions you will be able to decode Amadeus, Sabre and Galileo PNRs directly on your application.
 
-The EasyPNR API is a REST Server available at the endpoint [http://api.easypnr.com/v1](http://api.easypnr.com/v1/).
+The **EasyPNR API** is a REST Server available at the endpoint [http://api.easypnr.com/v1](http://api.easypnr.com/v1/).
 
-The API is pretty simple, but in case of problems or difficulties that you can face, contact us on [support@easypnr.com](mailto:support@easypnr.com) or using the form available on the [website](http://www.easypnr.com/contact]).
+The API is pretty simple, anyway, in case of problems, contact us on [support@easypnr.com](mailto:support@easypnr.com) or using the form available on the [website](http://www.easypnr.com/contact]).
 
 # Authentication
 
@@ -41,8 +39,8 @@ import kittn
 api = kittn.authorize('meowmeowmeow')
 ```
 
-```shell
-# With shell, you can just pass the correct header with each request
+```curl
+# With curl, you can just pass the correct header with each request
 curl "api_endpoint_here"
   -H "Authorization: meowmeowmeow"
 ```
