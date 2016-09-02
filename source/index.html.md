@@ -5,7 +5,7 @@ language_tabs:
   - curl
 
 toc_footers:
-  - <a href="https://easypnr.com/signup" target="_blank">Sign Up for a Developer Key</a>
+  - <a href="https://easypnr.com/signup" target="_blank">Sign up to use this API</a>
   #- <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
