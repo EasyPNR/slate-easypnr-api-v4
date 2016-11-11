@@ -113,7 +113,7 @@ Decode a PNR.
 
 ### HTTP Request
 
-`POST https://api.easypnr.com/v2/decode`
+`POST https://api.easypnr.com/v3/decode`
 
 ### Query Parameters
 
