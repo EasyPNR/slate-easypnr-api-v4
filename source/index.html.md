@@ -38,70 +38,74 @@ The API is pretty simple, anyway, in case of problems, contact us on [support@ea
 curl -i -X POST -d "api_key=mySecretKey" https://api.easypnr.com/v3/ping
 ```
 
-To use the Web Services, you must have an active account on the [www.easypnr.com](http://www.easypnr.com) and obtain your **API Key** on the account page.
+To use the Web Services, you must have an active account on the [www.easypnr.com](http://www.easypnr.com) and obtain your **API Key** on the account page. You can manage your API keys in the main website.
 
 Once you have your API Key, you must use it in all Web Service calls, passing your key in an *HTTP Header* named **"api_key"**.
+
+Your API keys carry many privileges, so be sure to keep them secret! Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.
 
 # decode
 
 ```curl
 # Request
-curl -i -X POST -d "encodedPNR=1.JOHNSON/BRIAN MR  2.JOHNSON/BRENDA MRS \n 2 QR 905 E 06MAR 4 DOHMEL HK1 1  0005 0810+1 *1A/E*"  -H "Content-Type: application/json" -H "api_key: mySecretKey" https://api.easypnr.com/v3/decode
+curl -i -X POST -H "api_key: mySecretKey" -d "1.JOHNSON/BRIAN MR  2.JOHNSON/BRENDA MRS \n 2 QR 905 E 06MAR 4 DOHMEL HK1 1  0005 0810+1 *1A/E*"  -H "Content-Type: application/json"  https://api.easypnr.com/v3/decode
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-{
-   "persons":[
-      {
-         "firstName":"BRIAN",
-         "lastName":"JOHNSON",
-         "title":"MR",
-         "rawData":"JOHNSON/BRIAN MR"
-      },
-      {
-         "firstName":"BRENDA",
-         "lastName":"JOHNSON",
-         "title":"MRS",
-         "rawData":"JOHNSON/BRENDA MRS \\n"
-      }
-   ],
-   "others":null,
-   "flightInfo":{
-      "flights":[
-         {
-            "company":{
-               "iataCode":"QR",
-               "description":"Qatar Airways"
-            },
-            "departureTime":"2016-03-06 00:05:00",
-            "landingTime":"2016-03-07 08:10:00",
-            "departureAirport":{
-               "iataCode":"DOH",
-               "description":"Hamad International Airport - Doha, Qatar"
-            },
-            "flight":"905",
-            "landingAirport":{
-               "iataCode":"MEL",
-               "description":"Melbourne Airport - Melbourne, Victoria, Australia"
-            }
-         }
-      ]
+"persons":[
+   {
+      "firstName":"BRIAN",
+      "lastName":"JOHNSON",
+      "title":"MR",
+      "rawData":"JOHNSON/BRIAN MR"
    },
-   "hotelInfo":{
-      "hotels":[
-
-      ]
-   },
-   "trainInfo":{
-      "trains":[
-
-      ],
-      "stationNames":{
-
-      }
+   {
+      "firstName":"BRENDA",
+      "lastName":"JOHNSON",
+      "title":"MRS",
+      "rawData":"JOHNSON/BRENDA MRS"
    }
+],
+"others":null,
+"flightInfo":{
+   "flights":[
+      {
+         "company":{
+            "iataCode":"QR",
+            "description":"Qatar Airways"
+         },
+         "departureTime":"2017-03-06 00:05:00",
+         "landingTime":"2017-03-07 08:10:00",
+         "departureAirport":{
+            "iataCode":"DOH",
+            "description":"Hamad International Airport - Doha, Qatar"
+         },
+         "flight":"905",
+         "seatInfo":[
+
+         ],
+         "landingAirport":{
+            "iataCode":"MEL",
+            "description":"Melbourne Airport - Melbourne, Victoria, Australia"
+         }
+      }
+   ]
+},
+"hotelInfo":{
+   "hotels":[
+
+   ]
+},
+"trainInfo":{
+   "trains":[
+
+   ],
+   "stationNames":{
+
+   }
+}
 }
 ```
 
