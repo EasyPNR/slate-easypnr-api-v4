@@ -145,7 +145,9 @@ curl -i -X POST -d "api_key=mySecretKey" https://api.easypnr.com/v3/ping
 
 <p>Your API keys carry many privileges, so be sure to keep them secret! Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.</p>
 
-<h1 id="decode">decode</h1>
+<h1 id="available-methods">Available methods</h1>
+
+<h2 id="decode">/decode</h2>
 <pre class="highlight plaintext"><code># Request
 curl -i -X POST -H "api_key: mySecretKey" -d "1.JOHNSON/BRIAN MR  2.JOHNSON/BRENDA MRS \n 2 QR 905 E 06MAR 4 DOHMEL HK1 1  0005 0810+1 *1A/E*"  -H "Content-Type: application/json"  https://api.easypnr.com/v3/decode
 </code></pre>
@@ -208,33 +210,33 @@ curl -i -X POST -H "api_key: mySecretKey" -d "1.JOHNSON/BRIAN MR  2.JOHNSON/BREN
 </span><span class="err">}</span><span class="w">
 </span></code></pre>
 
-<p>Decode a PNR.</p>
+<p>Decode the PNR.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://api.easypnr.com/v2/decode</code></p>
+<p><code class="prettyprint">POST https://api.easypnr.com/v3/decode</code></p>
 
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>encodedPNR</td>
-<td>true</td>
-<td>false</td>
-<td>The PNR that will be decoded.</td>
-</tr>
-</tbody></table>
+<p>At the <code class="prettyprint">BODY</code> of the <code class="prettyprint">POST</code> submit your encoded PNR.</p>
 
 <!-- aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside-->
+
+<h2 id="ping">/ping</h2>
+<pre class="highlight plaintext"><code># Request
+curl -i -X GET -H "api_key: mySecretKey"  https://api.easypnr.com/v3/ping
+</code></pre>
+<pre class="highlight plaintext"><code># Response
+pong 1478969148631
+</code></pre>
+
+<p>Ping the server.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://api.easypnr.com/v3/ping</code></p>
+
+<p>The above command returns a &lsquo;pong&rsquo; followed by the server timestamp.</p>
 
       </div>
       <div class="dark-box">
