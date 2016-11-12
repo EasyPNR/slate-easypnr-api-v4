@@ -218,6 +218,10 @@ curl -i -X POST -H "api_key: mySecretKey" -d "1.JOHNSON/BRIAN MR  2.JOHNSON/BREN
 
 <p>At the <code class="prettyprint">BODY</code> of the <code class="prettyprint">POST</code> submit your encoded PNR.</p>
 
+<h3 id="http-response">HTTP Response</h3>
+
+<p>The response is the decoded PNR.</p>
+
 <!-- aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside-->
@@ -235,6 +239,8 @@ pong 1478969148631
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">GET https://api.easypnr.com/v3/ping</code></p>
+
+<h3 id="http-response">HTTP Response</h3>
 
 <p>The above command returns a &lsquo;pong&rsquo; followed by the server timestamp.</p>
 
