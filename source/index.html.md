@@ -44,7 +44,9 @@ Once you have your API Key, you must use it in all Web Service calls, passing yo
 
 Your API keys carry many privileges, so be sure to keep them secret! Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.
 
-# decode
+# Available methods
+
+## /decode
 
 ```curl
 # Request
@@ -109,19 +111,33 @@ curl -i -X POST -H "api_key: mySecretKey" -d "1.JOHNSON/BRIAN MR  2.JOHNSON/BREN
 }
 ```
 
-Decode a PNR.
+Decode the PNR.
 
 ### HTTP Request
 
 `POST https://api.easypnr.com/v3/decode`
 
-### Query Parameters
-
-Parameter  | Required |Default | Description
----------  | ---------|------- | -----------
-encodedPNR | true     |false   | The PNR that will be decoded.
-
+At the `BODY` of the `POST` submit your encoded PNR.
 
 <!-- aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside-->
+
+## /ping
+
+```curl
+# Request
+curl -i -X GET -H "api_key: mySecretKey"  https://api.easypnr.com/v3/ping
+```
+
+```text
+# Response
+pong 1478969148631
+```
+Ping the server.
+
+### HTTP Request
+
+`GET https://api.easypnr.com/v3/ping`
+
+The above command returns a 'pong' followed by the server timestamp.
