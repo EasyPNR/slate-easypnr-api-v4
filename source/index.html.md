@@ -113,13 +113,13 @@ curl -i -X POST -H "api_key: mySecretKey" -d "1.JOHNSON/BRIAN MR  2.JOHNSON/BREN
 
 Decode the PNR.
 
-### HTTP Request
+### Request
 
 `POST https://api.easypnr.com/v3/decode`
 
 At the `BODY` of the `POST` submit your encoded PNR.
 
-### HTTP Response
+### Response
 
 The response is the decoded PNR.
 
@@ -140,10 +140,10 @@ pong 1478969148631
 ```
 Ping the server.
 
-### HTTP Request
+### Request
 
 `GET https://api.easypnr.com/v3/ping`
 
-### HTTP Response
+### Response
 
 The above command returns a 'pong' followed by the server timestamp.
