@@ -119,6 +119,10 @@ Decode the PNR.
 
 At the `BODY` of the `POST` submit your encoded PNR.
 
+### HTTP Response
+
+The response is the decoded PNR.
+
 <!-- aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside-->
@@ -139,5 +143,7 @@ Ping the server.
 ### HTTP Request
 
 `GET https://api.easypnr.com/v3/ping`
+
+### HTTP Response
 
 The above command returns a 'pong' followed by the server timestamp.
