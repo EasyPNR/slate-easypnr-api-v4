@@ -32,6 +32,10 @@ The API is pretty simple, anyway, in case of problems, contact us on [support@ea
 
 The authentication now is done using an user API key. Also, the Response of /decode method, the *decoded PNR* can contains information about the seats.
 
+## Older versions
+
+The Protocol Version 2 documentation can be fond here  [http://docs.easypnr.com/api/v2](http://docs.easypnr.com/api/v2/).
+
 # Authentication
 
 > To use the Web Services, you must pass your API Token on all requests:
