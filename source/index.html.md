@@ -28,6 +28,9 @@ The **EasyPNR API** is a REST Server available at the endpoint [http://api.easyp
 
 The API is pretty simple, anyway, in case of problems, contact us on [support@easypnr.com](mailto:support@easypnr.com) or using the form available on the [website](http://www.easypnr.com/contact).
 
+## What's new in Version 3?
+
+The authentication now is done using an user API key. Also, the Response of /decode method, the *decoded PNR* can contains information about the seats.
 
 # Authentication
 
@@ -147,7 +150,3 @@ Ping the server.
 ### Response
 
 The above command returns a 'pong' followed by the server timestamp.
-
-# What's new in Version 3?
-
-The authentication now is done using an user API key. Also, the Response of /decode method, the *decoded PNR* can contains information about the seats.
