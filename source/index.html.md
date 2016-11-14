@@ -147,3 +147,7 @@ Ping the server.
 ### Response
 
 The above command returns a 'pong' followed by the server timestamp.
+
+# What's new in Version 3?
+
+The authentication now is done using an user API key. Also, the Response of /decode method, the *decoded PNR* can contains information about the seats.
