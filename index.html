@@ -144,12 +144,12 @@
 <p>To use the Web Services, you must pass your API Token on all requests:</p>
 </blockquote>
 <pre class="highlight plaintext"><code># Example of a request using an API Key
-curl -i -X POST -d "api_key=mySecretKey" https://api.easypnr.com/v3/ping
+curl -i -X POST -h "X-Api-Key: mySecretKey" https://api.easypnr.com/v3/ping
 </code></pre>
 
 <p>To use the Web Services, you must have an active account on the <a href="http://www.easypnr.com">www.easypnr.com</a> and obtain your <strong>API Key</strong> on the account page. You can manage your API keys in the main website.</p>
 
-<p>Once you have your API Key, you must use it in all Web Service calls, passing your key in an <em>HTTP Header</em> named <strong>&ldquo;api_key&rdquo;</strong>.</p>
+<p>Once you have your API Key, you must use it in all Web Service calls, passing your key in an <em>HTTP Header</em> named <strong>&ldquo;X-Api-Key&rdquo;</strong>.</p>
 
 <p>Your API keys carry many privileges, so be sure to keep them secret! Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.</p>
 
@@ -157,7 +157,7 @@ curl -i -X POST -d "api_key=mySecretKey" https://api.easypnr.com/v3/ping
 
 <h2 id="decode">/decode</h2>
 <pre class="highlight plaintext"><code># Request
-curl -i -X POST -H "api_key: mySecretKey" -d "1.JOHNSON/BRIAN MR  2.JOHNSON/BRENDA MRS \n 2 QR 905 E 06MAR 4 DOHMEL HK1 1  0005 0810+1 *1A/E*"  -H "Content-Type: application/json"  https://api.easypnr.com/v3/decode
+curl -i -X POST -H "X-Api-Key: mySecretKey" -d "1.JOHNSON/BRIAN MR  2.JOHNSON/BRENDA MRS \n 2 QR 905 E 06MAR 4 DOHMEL HK1 1  0005 0810+1 *1A/E*"  -H "Content-Type: application/json"  https://api.easypnr.com/v3/decode
 </code></pre>
 
 <blockquote>
@@ -236,7 +236,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 <h2 id="ping">/ping</h2>
 <pre class="highlight plaintext"><code># Request
-curl -i -X GET -H "api_key: mySecretKey"  https://api.easypnr.com/v3/ping
+curl -i -X GET -H "X-Api-Key: mySecretKey"  https://api.easypnr.com/v3/ping
 </code></pre>
 <pre class="highlight plaintext"><code># Response
 pong 1478969148631
