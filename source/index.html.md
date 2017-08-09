@@ -1,7 +1,7 @@
 ---
 title: EasyPNR API Version 3.0
 
-language_tabs:
+language_tabs: # must be one of https://git.io/vQNgJ
   - curl
 
 toc_footers:
@@ -152,5 +152,4 @@ Ping the server.
 `GET https://api.easypnr.com/v3/ping`
 
 ### Response
-
 The above command returns a 'pong' followed by the server timestamp.
