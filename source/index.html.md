@@ -30,7 +30,7 @@ The API is pretty simple, anyway, in case of problems, contact us on [support@ea
 
 ## What's new in Version 4?
 
- - Included a Map with "extraInfo" on the JSON objects of the /decode method response. This was made to ensure more flexibility, not being necessary to create a new API version each time the server evolves decoding more data, per example.
+ - Included a Map with "extraInfo" on the JSON objects of the /decode method response. This was made to ensure more flexibility, not being necessary to create a new API version each time the server evolves, per example, when some new data field is being decoded.
  - Sabre Record Locator being decoded.
  - Amadeus fare being decoded.
 
