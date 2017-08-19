@@ -70,7 +70,7 @@ curl -i -X POST -H "X-Api-Key: mySecretKey" \
    5 HTL 1A HK4 CVF 30NOV-01DEC/HOTEL LES ANCOLIES/RUE DES                      
        GRAVELLES 73120 COURCHEVEL/T-04.79.08.27.66/CF-AATRIP/                     
    ' \
- -H "Content-Type: application/json"   http://api.easypnr.com/v4/decode
+ -H "Content-Type: application/json"   https://api.easypnr.com/v4/decode
 ```
 
 
