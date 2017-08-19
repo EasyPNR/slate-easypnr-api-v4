@@ -1,125 +1,215 @@
+
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>EasyPNR API Version 3.0</title>
+    <title>EasyPNR API Version 4.0</title>
 
     <style>
       .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
-.highlight, .highlight .w {
-  color: #f8f8f2;
-  background-color: #272822;
-}
-.highlight .err {
-  color: #151515;
-  background-color: #ac4142;
-}
-.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
-  color: #505050;
-}
-.highlight .cp {
-  color: #f4bf75;
-}
-.highlight .nt {
-  color: #f4bf75;
-}
-.highlight .o, .highlight .ow {
-  color: #d0d0d0;
-}
-.highlight .p, .highlight .pi {
-  color: #d0d0d0;
-}
-.highlight .gi {
-  color: #90a959;
-}
-.highlight .gd {
-  color: #ac4142;
-}
 .highlight .gh {
-  color: #6a9fb5;
-  background-color: #151515;
-  font-weight: bold;
-}
-.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
-  color: #aa759f;
-}
-.highlight .kc {
-  color: #d28445;
-}
-.highlight .kt {
-  color: #d28445;
-}
-.highlight .kd {
-  color: #d28445;
-}
-.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
-  color: #90a959;
+  color: #999999;
 }
 .highlight .sr {
-  color: #75b5aa;
+  color: #f6aa11;
 }
-.highlight .si {
-  color: #8f5536;
+.highlight .go {
+  color: #888888;
 }
-.highlight .se {
-  color: #8f5536;
+.highlight .gp {
+  color: #555555;
 }
-.highlight .nn {
-  color: #f4bf75;
+.highlight .gs {
 }
-.highlight .nc {
-  color: #f4bf75;
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
 }
 .highlight .no {
-  color: #f4bf75;
+  color: #66d9ef;
 }
-.highlight .na {
-  color: #6a9fb5;
+.highlight .kt {
+  color: #66d9ef;
 }
-.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
-  color: #90a959;
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
 }
 .highlight .ss {
-  color: #90a959;
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
 }
     </style>
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
       <script src="javascripts/all.js"></script>
-
-    <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-41029690-1', 'easypnr.com');
-            ga('require', 'displayfeatures');
-            ga('send', 'pageview');
-
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-41029690-1']);
-
-            (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-        </script>
   </head>
 
   <body class="index" data-languages="[&quot;curl&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" />
+        <img src="images/navbar.png" alt="Navbar" />
       </span>
     </a>
-    <div class="tocify-wrapper">
-      <img src="images/logo.png" />
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="curl">curl</a>
         </div>
@@ -127,7 +217,29 @@
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
         <ul class="search-results"></ul>
-      <div id="toc">
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#what-39-s-new-in-version-4" class="toc-h2 toc-link" data-title="Introduction">What's new in Version 4?</a>
+                  </li>
+                  <li>
+                    <a href="#older-versions" class="toc-h2 toc-link" data-title="Introduction">Older versions</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#available-methods" class="toc-h1 toc-link" data-title="Available methods">Available methods</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#decode" class="toc-h2 toc-link" data-title="Available methods">/decode</a>
+                  </li>
+              </ul>
+          </li>
       </div>
         <ul class="toc-footer">
             <li><a href="https://easypnr.com/signup" target="_blank">Sign up to use this API</a></li>
@@ -136,141 +248,153 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id="introduction">Introduction</h1>
-
+        <h1 id='introduction'>Introduction</h1>
 <blockquote>
-<p>API Endpoint Version 3</p>
+<p>API Endpoint Version 4</p>
 </blockquote>
-<pre class="highlight plaintext"><code>http://api.easypnr.com/v3/
+<pre class="highlight plaintext"><code>http://api.easypnr.com/v4/
 </code></pre>
+<p>Welcome to the <strong>EasyPNR API v4</strong> documentation! Following the further instructions you will be able to decode Amadeus, Sabre and Galileo PNRs directly on your application.</p>
 
-<p>Welcome to the <strong>EasyPNR API</strong> documentation! Following the further instructions you will be able to decode Amadeus, Sabre and Galileo PNRs directly on your application.</p>
-
-<p>The <strong>EasyPNR API</strong> is a REST Server available at the endpoint <a href="http://api.easypnr.com/v3/">http://api.easypnr.com/v3</a>.</p>
+<p>The <strong>EasyPNR API</strong> is a REST Server available at the endpoint <a href="http://api.easypnr.com/v4/">http://api.easypnr.com/v4</a>.</p>
 
 <p>The API is pretty simple, anyway, in case of problems, contact us on <a href="mailto:support@easypnr.com">support@easypnr.com</a> or using the form available on the <a href="http://www.easypnr.com/contact">website</a>.</p>
-
-<h2 id="what-39-s-new-in-version-3">What&rsquo;s new in Version 3?</h2>
-
-<p>The authentication now is done using an user API key. Also, the Response of /decode method, the <em>decoded PNR</em> can contains information about the seats.</p>
-
-<h2 id="older-versions">Older versions</h2>
-
-<p>The Protocol Version 2 documentation can be fond here  <a href="http://docs.easypnr.com/api/v2/">http://docs.easypnr.com/api/v2</a>.</p>
-
-<h1 id="authentication">Authentication</h1>
-
+<h2 id='what-39-s-new-in-version-4'>What&#39;s new in Version 4?</h2>
+<ul>
+<li>Included a Map with &quot;extraInfo&quot; on the JSON objects of the /decode method response. This was made to ensure more flexibility, not being necessary to create a new API version each time the server evolves, per example, when some new data field is being decoded.</li>
+<li>Sabre Record Locator being decoded.</li>
+<li>Amadeus fare being decoded.</li>
+</ul>
+<h2 id='older-versions'>Older versions</h2>
+<p>The Protocol Version 3 documentation can be fond here  <a href="http://docs.easypnr.com/api/v3/">http://docs.easypnr.com/api/v3</a>.</p>
+<h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To use the Web Services, you must pass your API Token on all requests:</p>
 </blockquote>
 <pre class="highlight plaintext"><code># Example of a request using an API Key
-curl -i -X POST -h "X-Api-Key: mySecretKey" https://api.easypnr.com/v3/ping
+curl -i -X POST -h "X-Api-Key: mySecretKey" https://api.easypnr.com/v4/ping
 </code></pre>
-
 <p>To use the Web Services, you must have an active account on the <a href="http://www.easypnr.com">www.easypnr.com</a> and obtain your <strong>API Key</strong> on the account page. You can manage your API keys in the main website.</p>
 
-<p>Once you have your API Key, you must use it in all Web Service calls, passing your key in an <em>HTTP Header</em> named <strong>&ldquo;X-Api-Key&rdquo;</strong>.</p>
+<p>Once you have your API Key, you must use it in all Web Service calls, passing your key in an <em>HTTP Header</em> named <strong>&quot;X-Api-Key&quot;</strong>.</p>
 
 <p>Your API keys carry many privileges, so be sure to keep them secret! Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.</p>
-
-<h1 id="available-methods">Available methods</h1>
-
-<h2 id="decode">/decode</h2>
-<pre class="highlight plaintext"><code># Request
-curl -i -X POST -H "X-Api-Key: mySecretKey" -d "1.JOHNSON/BRIAN MR  2.JOHNSON/BRENDA MRS \n 2 QR 905 E 06MAR 4 DOHMEL HK1 1  0005 0810+1 *1A/E*"  -H "Content-Type: application/json"  https://api.easypnr.com/v3/decode
+<h1 id='available-methods'>Available methods</h1><h2 id='decode'>/decode</h2><pre class="highlight plaintext"><code># Request
+curl -i -X POST -H "X-Api-Key: mySecretKey" \
+ -d $'1.JOHNSON/BRIAN MR  2.JOHNSON/BRENDA MRS                             
+   2  EK 262 Y 08MAR 6 GRUDXB HK1       2  0125 2255   77W E 0 M               
+      ADD ADVANCE PASSENGER INFORMATION IN SSR DOCS                            
+      ADD SSR PCTC TO PROVIDE PAX CONTACT                                      
+      SEE RTSVC                                                                
+   4 TRN 2C  87    6628 AF 26NOV 4 FRLPD FRPLY HK1   1800  2007                 
+     FRLPD/LYON PART DIEU//FRPLY/PARIS GARE LYON     /TGD *
+   5 HTL 1A HK4 CVF 30NOV-01DEC/HOTEL LES ANCOLIES/RUE DES                      
+       GRAVELLES 73120 COURCHEVEL/T-04.79.08.27.66/CF-AATRIP/                     
+   ' \
+ -H "Content-Type: application/json"   http://api.easypnr.com/v4/decode
 </code></pre>
-
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json"><code><span class="s2">"persons"</span><span class="err">:</span><span class="p">[</span><span class="w">
-   </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"firstName"</span><span class="p">:</span><span class="s2">"BRIAN"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"lastName"</span><span class="p">:</span><span class="s2">"JOHNSON"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"title"</span><span class="p">:</span><span class="s2">"MR"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"rawData"</span><span class="p">:</span><span class="s2">"JOHNSON/BRIAN MR"</span><span class="w">
-   </span><span class="p">},</span><span class="w">
-   </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"firstName"</span><span class="p">:</span><span class="s2">"BRENDA"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"lastName"</span><span class="p">:</span><span class="s2">"JOHNSON"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"title"</span><span class="p">:</span><span class="s2">"MRS"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"rawData"</span><span class="p">:</span><span class="s2">"JOHNSON/BRENDA MRS"</span><span class="w">
-   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="err">,</span><span class="w">
-</span><span class="s2">"others"</span><span class="err">:</span><span class="kc">null</span><span class="err">,</span><span class="w">
-</span><span class="s2">"flightInfo"</span><span class="err">:</span><span class="p">{</span><span class="w">
-   </span><span class="nt">"flights"</span><span class="p">:[</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"persons"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRIAN"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOHNSON"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rawData"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOHNSON/BRIAN MR"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRENDA"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOHNSON"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MRS"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"rawData"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOHNSON/BRENDA MRS"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"flightInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"flights"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-         </span><span class="nt">"company"</span><span class="p">:{</span><span class="w">
-            </span><span class="nt">"iataCode"</span><span class="p">:</span><span class="s2">"QR"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"description"</span><span class="p">:</span><span class="s2">"Qatar Airways"</span><span class="w">
-         </span><span class="p">},</span><span class="w">
-         </span><span class="nt">"departureTime"</span><span class="p">:</span><span class="s2">"2017-03-06 00:05:00"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"landingTime"</span><span class="p">:</span><span class="s2">"2017-03-07 08:10:00"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"departureAirport"</span><span class="p">:{</span><span class="w">
-            </span><span class="nt">"iataCode"</span><span class="p">:</span><span class="s2">"DOH"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"description"</span><span class="p">:</span><span class="s2">"Hamad International Airport - Doha, Qatar"</span><span class="w">
-         </span><span class="p">},</span><span class="w">
-         </span><span class="nt">"flight"</span><span class="p">:</span><span class="s2">"905"</span><span class="p">,</span><span class="w">
-         </span><span class="nt">"seatInfo"</span><span class="p">:[</span><span class="w">
-
-         </span><span class="p">],</span><span class="w">
-         </span><span class="nt">"landingAirport"</span><span class="p">:{</span><span class="w">
-            </span><span class="nt">"iataCode"</span><span class="p">:</span><span class="s2">"MEL"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"description"</span><span class="p">:</span><span class="s2">"Melbourne Airport - Melbourne, Victoria, Australia"</span><span class="w">
-         </span><span class="p">}</span><span class="w">
+        </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"iataCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EK"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Emirates"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"departureTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-08 01:25:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"landingTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-08 22:55:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"flight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"262"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"departureAirport"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"iataCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GRU"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Guarulhos International Airport - Guarulhos, São Paulo, Brazil"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="s2">"seatInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"landingAirport"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"iataCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DXB"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dubai International Airport - Dubai, United Arab Emirates"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
-   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="err">,</span><span class="w">
-</span><span class="s2">"hotelInfo"</span><span class="err">:</span><span class="p">{</span><span class="w">
-   </span><span class="nt">"hotels"</span><span class="p">:[</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"hotelInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"hotels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HOTEL LES ANCOLIES"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RUE DES GRAVELLES 73120 COURCHEVEL"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"checkIn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-30"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"checkOut"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-01"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"trainInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"trains"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"departureTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-26 18:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"arrivingTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-26 20:07"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"departureStationCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FRLPD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"arrivingStationCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FRPLY"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6628"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"stationNames"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"FRLPD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LYON PART DIEU"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"FRPLY"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PARIS GARE LYON"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="err">```</span><span class="w">
 
-   </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="err">,</span><span class="w">
-</span><span class="s2">"trainInfo"</span><span class="err">:</span><span class="p">{</span><span class="w">
-   </span><span class="nt">"trains"</span><span class="p">:[</span><span class="w">
+</span><span class="err">Decode</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">PNR.</span><span class="w">
 
-   </span><span class="p">],</span><span class="w">
-   </span><span class="nt">"stationNames"</span><span class="p">:{</span><span class="w">
+</span><span class="err">###</span><span class="w"> </span><span class="err">Request</span><span class="w">
 
-   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span><span class="err">}</span><span class="w">
-</span></code></pre>
+</span><span class="err">`POST</span><span class="w"> </span><span class="err">https</span><span class="p">:</span><span class="err">//api.easypnr.com/v</span><span class="mi">4</span><span class="err">/decode`</span><span class="w">
 
-<p>Decode the PNR.</p>
+</span><span class="err">At</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">`BODY`</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">`POST`</span><span class="w"> </span><span class="err">submit</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">encoded</span><span class="w"> </span><span class="err">PNR</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">plain</span><span class="w"> </span><span class="err">text.</span><span class="w">
 
-<h3 id="request">Request</h3>
+</span><span class="err">###</span><span class="w"> </span><span class="err">Response</span><span class="w">
 
-<p><code class="prettyprint">POST https://api.easypnr.com/v3/decode</code></p>
+</span><span class="err">The</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">decoded</span><span class="w"> </span><span class="err">PNR.</span><span class="w">
 
-<p>At the <code class="prettyprint">BODY</code> of the <code class="prettyprint">POST</code> submit your encoded PNR.</p>
+</span><span class="err">&lt;!--</span><span class="w"> </span><span class="err">aside</span><span class="w"> </span><span class="err">class=</span><span class="s2">"success"</span><span class="err">&gt;</span><span class="w">
+</span><span class="err">Remember</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">happy</span><span class="w"> </span><span class="err">kitten</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">authenticated</span><span class="w"> </span><span class="err">kitten!</span><span class="w">
+</span><span class="err">&lt;/aside--&gt;</span><span class="w">
 
-<h3 id="response">Response</h3>
+</span><span class="err">##</span><span class="w"> </span><span class="err">/ping</span><span class="w">
 
-<p>The response is the decoded PNR.</p>
-
-<!-- aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside-->
-
-<h2 id="ping">/ping</h2>
-<pre class="highlight plaintext"><code># Request
-curl -i -X GET -H "X-Api-Key: mySecretKey"  https://api.easypnr.com/v3/ping
-</code></pre>
-<pre class="highlight plaintext"><code># Response
+</span><span class="err">```curl</span><span class="w">
+</span><span class="err">#</span><span class="w"> </span><span class="err">Request</span><span class="w">
+</span><span class="err">curl</span><span class="w"> </span><span class="err">-i</span><span class="w"> </span><span class="err">-X</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="err">-H</span><span class="w"> </span><span class="s2">"X-Api-Key: mySecretKey"</span><span class="w">  </span><span class="err">https</span><span class="p">:</span><span class="err">//api.easypnr.com/v</span><span class="mi">4</span><span class="err">/ping</span><span class="w">
+</span></code></pre><pre class="highlight plaintext"><code># Response
 pong 1478969148631
 </code></pre>
-
 <p>Ping the server.</p>
-
-<h3 id="request">Request</h3>
-
-<p><code class="prettyprint">GET https://api.easypnr.com/v3/ping</code></p>
-
-<h3 id="response">Response</h3>
-
-<p>The above command returns a &lsquo;pong&rsquo; followed by the server timestamp.</p>
+<h3 id='request'>Request</h3>
+<p><code>GET https://api.easypnr.com/v4/ping</code></p>
+<h3 id='response'>Response</h3>
+<p>The above command returns a &#39;pong&#39; followed by the server timestamp.</p>
 
       </div>
       <div class="dark-box">
