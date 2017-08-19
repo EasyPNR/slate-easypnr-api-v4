@@ -145,7 +145,8 @@ curl -i -X POST -H "X-Api-Key: mySecretKey" \
     }
   },
   "extraInfo": null
-}```
+}
+```
 
 Decode the PNR.
 
