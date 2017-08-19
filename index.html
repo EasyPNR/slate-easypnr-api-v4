@@ -238,6 +238,9 @@
                   <li>
                     <a href="#decode" class="toc-h2 toc-link" data-title="Available methods">/decode</a>
                   </li>
+                  <li>
+                    <a href="#ping" class="toc-h2 toc-link" data-title="Available methods">/ping</a>
+                  </li>
               </ul>
           </li>
       </div>
@@ -364,36 +367,28 @@ curl -i -X POST -H "X-Api-Key: mySecretKey" \
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-</span><span class="p">}</span><span class="err">```</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Decode the PNR.</p>
+<h3 id='request'>Request</h3>
+<p><code>POST https://api.easypnr.com/v4/decode</code></p>
 
-</span><span class="err">Decode</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">PNR.</span><span class="w">
+<p>At the <code>BODY</code> of the <code>POST</code> submit your encoded PNR as plain text.</p>
+<h3 id='response'>Response</h3>
+<p>The response is the decoded PNR.</p>
 
-</span><span class="err">###</span><span class="w"> </span><span class="err">Request</span><span class="w">
-
-</span><span class="err">`POST</span><span class="w"> </span><span class="err">https</span><span class="p">:</span><span class="err">//api.easypnr.com/v</span><span class="mi">4</span><span class="err">/decode`</span><span class="w">
-
-</span><span class="err">At</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">`BODY`</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">`POST`</span><span class="w"> </span><span class="err">submit</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">encoded</span><span class="w"> </span><span class="err">PNR</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">plain</span><span class="w"> </span><span class="err">text.</span><span class="w">
-
-</span><span class="err">###</span><span class="w"> </span><span class="err">Response</span><span class="w">
-
-</span><span class="err">The</span><span class="w"> </span><span class="err">response</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">decoded</span><span class="w"> </span><span class="err">PNR.</span><span class="w">
-
-</span><span class="err">&lt;!--</span><span class="w"> </span><span class="err">aside</span><span class="w"> </span><span class="err">class=</span><span class="s2">"success"</span><span class="err">&gt;</span><span class="w">
-</span><span class="err">Remember</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">happy</span><span class="w"> </span><span class="err">kitten</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">authenticated</span><span class="w"> </span><span class="err">kitten!</span><span class="w">
-</span><span class="err">&lt;/aside--&gt;</span><span class="w">
-
-</span><span class="err">##</span><span class="w"> </span><span class="err">/ping</span><span class="w">
-
-</span><span class="err">```curl</span><span class="w">
-</span><span class="err">#</span><span class="w"> </span><span class="err">Request</span><span class="w">
-</span><span class="err">curl</span><span class="w"> </span><span class="err">-i</span><span class="w"> </span><span class="err">-X</span><span class="w"> </span><span class="err">GET</span><span class="w"> </span><span class="err">-H</span><span class="w"> </span><span class="s2">"X-Api-Key: mySecretKey"</span><span class="w">  </span><span class="err">https</span><span class="p">:</span><span class="err">//api.easypnr.com/v</span><span class="mi">4</span><span class="err">/ping</span><span class="w">
-</span></code></pre><pre class="highlight plaintext"><code># Response
+<!-- aside class="success">
+Remember — a happy kitten is an authenticated kitten!
+</aside-->
+<h2 id='ping'>/ping</h2><pre class="highlight plaintext"><code># Request
+curl -i -X GET -H "X-Api-Key: mySecretKey"  https://api.easypnr.com/v4/ping
+</code></pre><pre class="highlight plaintext"><code># Response
 pong 1478969148631
 </code></pre>
 <p>Ping the server.</p>
-<h3 id='request'>Request</h3>
+<h3 id='request-2'>Request</h3>
 <p><code>GET https://api.easypnr.com/v4/ping</code></p>
-<h3 id='response'>Response</h3>
+<h3 id='response-2'>Response</h3>
 <p>The above command returns a &#39;pong&#39; followed by the server timestamp.</p>
 
       </div>
