@@ -59,66 +59,93 @@ Your API keys carry many privileges, so be sure to keep them secret! Do not shar
 
 ```curl
 # Request
-curl -i -X POST -H "X-Api-Key: mySecretKey" -d "1.JOHNSON/BRIAN MR  2.JOHNSON/BRENDA MRS \n 2 QR 905 E 06MAR 4 DOHMEL HK1 1  0005 0810+1 *1A/E*"  -H "Content-Type: application/json"  https://api.easypnr.com/v4/decode
+curl -i -X POST -H "X-Api-Key: mySecretKey" \
+ -d $'1.JOHNSON/BRIAN MR  2.JOHNSON/BRENDA MRS                             
+   2  EK 262 Y 08MAR 6 GRUDXB HK1       2  0125 2255   77W E 0 M               
+      ADD ADVANCE PASSENGER INFORMATION IN SSR DOCS                            
+      ADD SSR PCTC TO PROVIDE PAX CONTACT                                      
+      SEE RTSVC                                                                
+   4 TRN 2C  87    6628 AF 26NOV 4 FRLPD FRPLY HK1   1800  2007                 
+     FRLPD/LYON PART DIEU//FRPLY/PARIS GARE LYON     /TGD *
+   5 HTL 1A HK4 CVF 30NOV-01DEC/HOTEL LES ANCOLIES/RUE DES                      
+       GRAVELLES 73120 COURCHEVEL/T-04.79.08.27.66/CF-AATRIP/                     
+   ' \
+ -H "Content-Type: application/json"   http://api.easypnr.com/v4/decode
 ```
+
 
 > The above command returns JSON structured like this:
 
 ```json
-"persons":[
-   {
-      "firstName":"BRIAN",
-      "lastName":"JOHNSON",
-      "title":"MR",
-      "rawData":"JOHNSON/BRIAN MR"
-   },
-   {
-      "firstName":"BRENDA",
-      "lastName":"JOHNSON",
-      "title":"MRS",
-      "rawData":"JOHNSON/BRENDA MRS"
-   }
-],
-"others":null,
-"flightInfo":{
-   "flights":[
+{
+  "persons": [
+    {
+      "firstName": "BRIAN",
+      "lastName": "JOHNSON",
+      "title": "MR",
+      "rawData": "JOHNSON/BRIAN MR"
+    },
+    {
+      "firstName": "BRENDA",
+      "lastName": "JOHNSON",
+      "title": "MRS",
+      "rawData": "JOHNSON/BRENDA MRS"
+    }
+  ],
+  "flightInfo": {
+    "flights": [
       {
-         "company":{
-            "iataCode":"QR",
-            "description":"Qatar Airways"
-         },
-         "departureTime":"2017-03-06 00:05:00",
-         "landingTime":"2017-03-07 08:10:00",
-         "departureAirport":{
-            "iataCode":"DOH",
-            "description":"Hamad International Airport - Doha, Qatar"
-         },
-         "flight":"905",
-         "seatInfo":[
-
-         ],
-         "landingAirport":{
-            "iataCode":"MEL",
-            "description":"Melbourne Airport - Melbourne, Victoria, Australia"
-         }
+        "company": {
+          "iataCode": "EK",
+          "description": "Emirates"
+        },
+        "departureTime": "2018-03-08 01:25:00",
+        "landingTime": "2018-03-08 22:55:00",
+        "flight": "262",
+        "departureAirport": {
+          "iataCode": "GRU",
+          "description": "Guarulhos International Airport - Guarulhos, São Paulo, Brazil"
+        },
+        "extraInfo": {},
+        "seatInfo": [],
+        "landingAirport": {
+          "iataCode": "DXB",
+          "description": "Dubai International Airport - Dubai, United Arab Emirates"
+        }
       }
-   ]
-},
-"hotelInfo":{
-   "hotels":[
-
-   ]
-},
-"trainInfo":{
-   "trains":[
-
-   ],
-   "stationNames":{
-
-   }
-}
-}
-```
+    ],
+    "extraInfo": null
+  },
+  "hotelInfo": {
+    "hotels": [
+      {
+        "extraInfo": null,
+        "name": "HOTEL LES ANCOLIES",
+        "address": "RUE DES GRAVELLES 73120 COURCHEVEL",
+        "checkIn": "2017-11-30",
+        "checkOut": "2017-12-01"
+      }
+    ],
+    "extraInfo": null
+  },
+  "trainInfo": {
+    "extraInfo": null,
+    "trains": [
+      {
+        "departureTime": "2017-11-26 18:00",
+        "arrivingTime": "2017-11-26 20:07",
+        "departureStationCode": "FRLPD",
+        "arrivingStationCode": "FRPLY",
+        "number": "6628"
+      }
+    ],
+    "stationNames": {
+      "FRLPD": "LYON PART DIEU",
+      "FRPLY": "PARIS GARE LYON"
+    }
+  },
+  "extraInfo": null
+}```
 
 Decode the PNR.
 
@@ -126,7 +153,7 @@ Decode the PNR.
 
 `POST https://api.easypnr.com/v4/decode`
 
-At the `BODY` of the `POST` submit your encoded PNR.
+At the `BODY` of the `POST` submit your encoded PNR as plain text.
 
 ### Response
 
