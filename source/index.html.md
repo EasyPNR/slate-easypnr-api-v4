@@ -1,5 +1,5 @@
 ---
-title: EasyPNR API Version 3.0
+title: EasyPNR API Version 4.0
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - curl
@@ -16,25 +16,27 @@ search: true
 
 # Introduction
 
-> API Endpoint Version 3
+> API Endpoint Version 4
 
 ```
-http://api.easypnr.com/v3/
+http://api.easypnr.com/v4/
 ```
 
-Welcome to the **EasyPNR API** documentation! Following the further instructions you will be able to decode Amadeus, Sabre and Galileo PNRs directly on your application.
+Welcome to the **EasyPNR API v4** documentation! Following the further instructions you will be able to decode Amadeus, Sabre and Galileo PNRs directly on your application.
 
-The **EasyPNR API** is a REST Server available at the endpoint [http://api.easypnr.com/v3](http://api.easypnr.com/v3/).
+The **EasyPNR API** is a REST Server available at the endpoint [http://api.easypnr.com/v4](http://api.easypnr.com/v4/).
 
 The API is pretty simple, anyway, in case of problems, contact us on [support@easypnr.com](mailto:support@easypnr.com) or using the form available on the [website](http://www.easypnr.com/contact).
 
-## What's new in Version 3?
+## What's new in Version 4?
 
-The authentication now is done using an user API key. Also, the Response of /decode method, the *decoded PNR* can contains information about the seats.
+ - Included a Map with "extraInfo" on the JSON objects of the /decode method response. This was made to ensure more flexibility, not being necessary to create a new API version each time the server evolves, per example, when some new data field is being decoded.
+ - Sabre Record Locator being decoded.
+ - Amadeus fare being decoded.
 
 ## Older versions
 
-The Protocol Version 2 documentation can be fond here  [http://docs.easypnr.com/api/v2](http://docs.easypnr.com/api/v2/).
+The Protocol Version 3 documentation can be fond here  [http://docs.easypnr.com/api/v3](http://docs.easypnr.com/api/v3/).
 
 # Authentication
 
@@ -42,7 +44,7 @@ The Protocol Version 2 documentation can be fond here  [http://docs.easypnr.com/
 
 ```curl
 # Example of a request using an API Key
-curl -i -X POST -h "X-Api-Key: mySecretKey" https://api.easypnr.com/v3/ping
+curl -i -X POST -h "X-Api-Key: mySecretKey" https://api.easypnr.com/v4/ping
 ```
 
 To use the Web Services, you must have an active account on the [www.easypnr.com](http://www.easypnr.com) and obtain your **API Key** on the account page. You can manage your API keys in the main website.
@@ -57,74 +59,101 @@ Your API keys carry many privileges, so be sure to keep them secret! Do not shar
 
 ```curl
 # Request
-curl -i -X POST -H "X-Api-Key: mySecretKey" -d "1.JOHNSON/BRIAN MR  2.JOHNSON/BRENDA MRS \n 2 QR 905 E 06MAR 4 DOHMEL HK1 1  0005 0810+1 *1A/E*"  -H "Content-Type: application/json"  https://api.easypnr.com/v3/decode
+curl -i -X POST -H "X-Api-Key: mySecretKey" \
+ -d $'1.JOHNSON/BRIAN MR  2.JOHNSON/BRENDA MRS                             
+   2  EK 262 Y 08MAR 6 GRUDXB HK1       2  0125 2255   77W E 0 M               
+      ADD ADVANCE PASSENGER INFORMATION IN SSR DOCS                            
+      ADD SSR PCTC TO PROVIDE PAX CONTACT                                      
+      SEE RTSVC                                                                
+   4 TRN 2C  87    6628 AF 26NOV 4 FRLPD FRPLY HK1   1800  2007                 
+     FRLPD/LYON PART DIEU//FRPLY/PARIS GARE LYON     /TGD *
+   5 HTL 1A HK4 CVF 30NOV-01DEC/HOTEL LES ANCOLIES/RUE DES                      
+       GRAVELLES 73120 COURCHEVEL/T-04.79.08.27.66/CF-AATRIP/                     
+   ' \
+ -H "Content-Type: application/json"   http://api.easypnr.com/v4/decode
 ```
+
 
 > The above command returns JSON structured like this:
 
 ```json
-"persons":[
-   {
-      "firstName":"BRIAN",
-      "lastName":"JOHNSON",
-      "title":"MR",
-      "rawData":"JOHNSON/BRIAN MR"
-   },
-   {
-      "firstName":"BRENDA",
-      "lastName":"JOHNSON",
-      "title":"MRS",
-      "rawData":"JOHNSON/BRENDA MRS"
-   }
-],
-"others":null,
-"flightInfo":{
-   "flights":[
+{
+  "persons": [
+    {
+      "firstName": "BRIAN",
+      "lastName": "JOHNSON",
+      "title": "MR",
+      "rawData": "JOHNSON/BRIAN MR"
+    },
+    {
+      "firstName": "BRENDA",
+      "lastName": "JOHNSON",
+      "title": "MRS",
+      "rawData": "JOHNSON/BRENDA MRS"
+    }
+  ],
+  "flightInfo": {
+    "flights": [
       {
-         "company":{
-            "iataCode":"QR",
-            "description":"Qatar Airways"
-         },
-         "departureTime":"2017-03-06 00:05:00",
-         "landingTime":"2017-03-07 08:10:00",
-         "departureAirport":{
-            "iataCode":"DOH",
-            "description":"Hamad International Airport - Doha, Qatar"
-         },
-         "flight":"905",
-         "seatInfo":[
-
-         ],
-         "landingAirport":{
-            "iataCode":"MEL",
-            "description":"Melbourne Airport - Melbourne, Victoria, Australia"
-         }
+        "company": {
+          "iataCode": "EK",
+          "description": "Emirates"
+        },
+        "departureTime": "2018-03-08 01:25:00",
+        "landingTime": "2018-03-08 22:55:00",
+        "flight": "262",
+        "departureAirport": {
+          "iataCode": "GRU",
+          "description": "Guarulhos International Airport - Guarulhos, São Paulo, Brazil"
+        },
+        "extraInfo": {},
+        "seatInfo": [],
+        "landingAirport": {
+          "iataCode": "DXB",
+          "description": "Dubai International Airport - Dubai, United Arab Emirates"
+        }
       }
-   ]
-},
-"hotelInfo":{
-   "hotels":[
-
-   ]
-},
-"trainInfo":{
-   "trains":[
-
-   ],
-   "stationNames":{
-
-   }
-}
-}
-```
+    ],
+    "extraInfo": null
+  },
+  "hotelInfo": {
+    "hotels": [
+      {
+        "extraInfo": null,
+        "name": "HOTEL LES ANCOLIES",
+        "address": "RUE DES GRAVELLES 73120 COURCHEVEL",
+        "checkIn": "2017-11-30",
+        "checkOut": "2017-12-01"
+      }
+    ],
+    "extraInfo": null
+  },
+  "trainInfo": {
+    "extraInfo": null,
+    "trains": [
+      {
+        "departureTime": "2017-11-26 18:00",
+        "arrivingTime": "2017-11-26 20:07",
+        "departureStationCode": "FRLPD",
+        "arrivingStationCode": "FRPLY",
+        "number": "6628"
+      }
+    ],
+    "stationNames": {
+      "FRLPD": "LYON PART DIEU",
+      "FRPLY": "PARIS GARE LYON"
+    }
+  },
+  "extraInfo": null
+}```
 
 Decode the PNR.
 
 ### Request
 
-`POST https://api.easypnr.com/v3/decode`
+`POST https://api.easypnr.com/v4/decode`
 
-At the `BODY` of the `POST` submit your encoded PNR.
+At the `BODY` of the `POST` submit your encoded PNR as plain text.
 
 ### Response
 
@@ -138,7 +167,7 @@ Remember — a happy kitten is an authenticated kitten!
 
 ```curl
 # Request
-curl -i -X GET -H "X-Api-Key: mySecretKey"  https://api.easypnr.com/v3/ping
+curl -i -X GET -H "X-Api-Key: mySecretKey"  https://api.easypnr.com/v4/ping
 ```
 
 ```text
@@ -149,7 +178,7 @@ Ping the server.
 
 ### Request
 
-`GET https://api.easypnr.com/v3/ping`
+`GET https://api.easypnr.com/v4/ping`
 
 ### Response
 The above command returns a 'pong' followed by the server timestamp.
