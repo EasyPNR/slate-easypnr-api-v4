@@ -36,7 +36,7 @@ The API is pretty simple, anyway, in case of problems, contact us on [support@ea
 
 ## Older versions
 
-The Protocol Version 3 documentation can be fond here  [http://docs.easypnr.com/api/v3](http://docs.easypnr.com/api/v3/).
+The Protocol Version 3 documentation can be found here  [http://docs.easypnr.com/api/v3](http://docs.easypnr.com/api/v3/).
 
 # Authentication
 
