@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - curl
 
 toc_footers:
-  - <a href="https://easypnr.com/signup" target="_blank">Sign up to use this API</a>
+  - <a href="https://easypnr.com/my-account" target="_blank">Get your API Key here</a>
   #- <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -22,7 +22,7 @@ search: true
 http://api.easypnr.com/v4/
 ```
 
-Welcome to the **EasyPNR API v4** documentation! Following the further instructions you will be able to decode Amadeus, Sabre and Galileo PNRs directly on your application.
+Welcome to the **EasyPNR API v4** documentation! Following the further instructions you will be able to decode Amadeus, Sabre and Travelport [PNR](http://www.easypnr.com/blog/what-is-a-pnr) directly on your application.
 
 The **EasyPNR API** is a REST Server available at the endpoint [http://api.easypnr.com/v4](http://api.easypnr.com/v4/).
 
@@ -40,18 +40,18 @@ The Protocol Version 3 documentation can be found here  [http://docs.easypnr.com
 
 # Authentication
 
-> To use the Web Services, you must pass your API Token on all requests:
+> To use the Web Services, you must pass **your API Token** on all requests:
 
 ```curl
 # Example of a request using an API Key
 curl -i -X POST -h "X-Api-Key: mySecretKey" https://api.easypnr.com/v4/ping
 ```
 
-To use the Web Services, you must have an active account on the [www.easypnr.com](http://www.easypnr.com) and obtain your **API Key** on the account page. You can manage your API keys in the main website.
+To use the Web Services, you must have an active account on the [www.easypnr.com](http://www.easypnr.com) and obtain your **API Key** on [My account](http://www.easypnr.com/my-account) page.
 
 Once you have your API Key, you must use it in all Web Service calls, passing your key in an *HTTP Header* named **"X-Api-Key"**.
 
-Your API keys carry many privileges, so be sure to keep them secret! Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.
+Be careful and keep your API Key secret. Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.
 
 # Available methods
 
@@ -148,13 +148,13 @@ curl -i -X POST -H "X-Api-Key: mySecretKey" \
 }
 ```
 
-Decode the PNR.
+Decode a PNR.
 
 ### Request
 
 `POST https://api.easypnr.com/v4/decode`
 
-At the `BODY` of the `POST` submit your encoded PNR as plain text.
+At the `BODY` of the `POST` submit your encoded PNR as **plain text**.
 
 ### Response
 
@@ -183,3 +183,6 @@ Ping the server.
 
 ### Response
 The above command returns a 'pong' followed by the server timestamp.
+
+# About
+EasyPNR is a decoder and formatter.
