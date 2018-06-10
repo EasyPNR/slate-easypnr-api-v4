@@ -219,33 +219,39 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#what-39-s-new-in-version-4" class="toc-h2 toc-link" data-title="Introduction">What's new in Version 4?</a>
+                    <a href="#what-39-s-new-in-version-4" class="toc-h2 toc-link" data-title="what-s-new-in-version-4">What's new in Version 4?</a>
                   </li>
                   <li>
-                    <a href="#older-versions" class="toc-h2 toc-link" data-title="Introduction">Older versions</a>
+                    <a href="#older-versions" class="toc-h2 toc-link" data-title="older-versions">Older versions</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
           </li>
           <li>
-            <a href="#available-methods" class="toc-h1 toc-link" data-title="Available methods">Available methods</a>
+            <a href="#api" class="toc-h1 toc-link" data-title="api">API</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#decode" class="toc-h2 toc-link" data-title="Available methods">/decode</a>
+                    <a href="#decode" class="toc-h2 toc-link" data-title="decode">/decode</a>
                   </li>
                   <li>
-                    <a href="#ping" class="toc-h2 toc-link" data-title="Available methods">/ping</a>
+                    <a href="#airports" class="toc-h2 toc-link" data-title="airports">/airports</a>
+                  </li>
+                  <li>
+                    <a href="#ping" class="toc-h2 toc-link" data-title="ping">/ping</a>
                   </li>
               </ul>
+          </li>
+          <li>
+            <a href="#about" class="toc-h1 toc-link" data-title="about">About</a>
           </li>
       </div>
         <ul class="toc-footer">
-            <li><a href="https://easypnr.com/signup" target="_blank">Sign up to use this API</a></li>
+            <li><a href="https://easypnr.com/my-account" target="_blank">Get your API Key here</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -257,7 +263,7 @@
 </blockquote>
 <pre class="highlight plaintext"><code>http://api.easypnr.com/v4/
 </code></pre>
-<p>Welcome to the <strong>EasyPNR API v4</strong> documentation! Following the further instructions you will be able to decode Amadeus, Sabre and Galileo PNRs directly on your application.</p>
+<p>Welcome to the <strong>EasyPNR API v4</strong> documentation! Following the further instructions you will be able to decode Amadeus, Sabre and Travelport <a href="http://www.easypnr.com/blog/what-is-a-pnr">PNR</a> directly on your application.</p>
 
 <p>The <strong>EasyPNR API</strong> is a REST Server available at the endpoint <a href="http://api.easypnr.com/v4/">http://api.easypnr.com/v4</a>.</p>
 
@@ -272,18 +278,17 @@
 <p>The Protocol Version 3 documentation can be found here  <a href="http://docs.easypnr.com/api/v3/">http://docs.easypnr.com/api/v3</a>.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
-<p>To use the Web Services, you must pass your API Token on all requests:</p>
+<p>To use the Web Services, you must pass <strong>your API Token</strong> on all requests:</p>
 </blockquote>
 <pre class="highlight plaintext"><code># Example of a request using an API Key
 curl -i -X POST -h "X-Api-Key: mySecretKey" https://api.easypnr.com/v4/ping
 </code></pre>
-<p>To use the Web Services, you must have an active account on the <a href="http://www.easypnr.com">www.easypnr.com</a> and obtain your <strong>API Key</strong> on the account page. You can manage your API keys in the main website.</p>
+<p>To use the Web Services, you must have an active account on the <a href="http://www.easypnr.com">www.easypnr.com</a> and obtain your <strong>API Key</strong> on <a href="http://www.easypnr.com/my-account">My account</a> page.</p>
 
 <p>Once you have your API Key, you must use it in all Web Service calls, passing your key in an <em>HTTP Header</em> named <strong>&quot;X-Api-Key&quot;</strong>.</p>
 
-<p>Your API keys carry many privileges, so be sure to keep them secret! Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.</p>
-<h1 id='available-methods'>Available methods</h1><h2 id='decode'>/decode</h2><pre class="highlight plaintext"><code># Request
-curl -i -X POST -H "X-Api-Key: mySecretKey" \
+<p>Be careful and keep your API Key secret. Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.</p>
+<h1 id='api'>API</h1><h2 id='decode'>/decode</h2><pre class="highlight plaintext"><code>curl -i -X POST -H "X-Api-Key: mySecretKey" \
  -d $'1.JOHNSON/BRIAN MR  2.JOHNSON/BRENDA MRS                             
    2  EK 262 Y 08MAR 6 GRUDXB HK1       2  0125 2255   77W E 0 M               
       ADD ADVANCE PASSENGER INFORMATION IN SSR DOCS                            
@@ -295,11 +300,7 @@ curl -i -X POST -H "X-Api-Key: mySecretKey" \
        GRAVELLES 73120 COURCHEVEL/T-04.79.08.27.66/CF-AATRIP/                     
    ' \
  -H "Content-Type: application/json"   https://api.easypnr.com/v4/decode
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"persons"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRIAN"</span><span class="p">,</span><span class="w">
@@ -369,27 +370,67 @@ curl -i -X POST -H "X-Api-Key: mySecretKey" \
   </span><span class="s2">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Decode the PNR.</p>
-<h3 id='request'>Request</h3>
 <p><code>POST https://api.easypnr.com/v4/decode</code></p>
 
-<p>At the <code>BODY</code> of the <code>POST</code> submit your encoded PNR as plain text.</p>
-<h3 id='response'>Response</h3>
-<p>The response is the decoded PNR.</p>
+<p>Decode a PNR.</p>
+
+<p>At the <code>BODY</code> of the <code>POST</code> submit your encoded PNR as <strong>plain text</strong>.</p>
 
 <!-- aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside-->
+<h2 id='airports'>/airports</h2>
+<p>Methods to retrieve airport data.</p>
+<pre class="highlight plaintext"><code>curl -i -X GET -H "X-Api-Key: mySecretKey"  https://api.easypnr.com/v4/airport/FLN
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"locationName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hercílio Luz International Airport"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florianópolis, Santa Catarina"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brazil"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"iataCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FLN"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Description</th>
+<th>Parameters</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td><code>/airports</code></td>
+<td>Retrieve all airports with details.</td>
+<td></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/airports/:iataCode</code></td>
+<td>Retrieve details of an airport.</td>
+<td>The airport <a href="https://www.easypnr.com/blog/download-airport-iata-codes/">IATA code</a></td>
+</tr>
+</tbody></table>
 <h2 id='ping'>/ping</h2><pre class="highlight plaintext"><code># Request
 curl -i -X GET -H "X-Api-Key: mySecretKey"  https://api.easypnr.com/v4/ping
-</code></pre><pre class="highlight plaintext"><code># Response
-pong 1478969148631
+</code></pre><pre class="highlight plaintext"><code>pong 1478969148631
 </code></pre>
-<p>Ping the server.</p>
-<h3 id='request-2'>Request</h3>
-<p><code>GET https://api.easypnr.com/v4/ping</code></p>
-<h3 id='response-2'>Response</h3>
-<p>The above command returns a &#39;pong&#39; followed by the server timestamp.</p>
+<table><thead>
+<tr>
+<th>Method</th>
+<th>Path</th>
+<th>Description</th>
+<th>Parameters</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>GET</td>
+<td><code>/ping</code></td>
+<td>Ping the server</td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='about'>About</h1>
+<p><a href="https://www.easypnr.com">EasyPNR</a> is a free decoder and formatter for Amadeus, Sabre and Travelport.</p>
 
       </div>
       <div class="dark-box">
