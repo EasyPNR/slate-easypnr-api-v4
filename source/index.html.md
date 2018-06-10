@@ -6,7 +6,6 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href="https://easypnr.com/my-account" target="_blank">Get your API Key here</a>
-  #- <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
 #  - errors
@@ -53,12 +52,11 @@ Once you have your API Key, you must use it in all Web Service calls, passing yo
 
 Be careful and keep your API Key secret. Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.
 
-# Available methods
+# API
 
 ## /decode
 
 ```curl
-# Request
 curl -i -X POST -H "X-Api-Key: mySecretKey" \
  -d $'1.JOHNSON/BRIAN MR  2.JOHNSON/BRENDA MRS                             
    2  EK 262 Y 08MAR 6 GRUDXB HK1       2  0125 2255   77W E 0 M               
@@ -72,10 +70,6 @@ curl -i -X POST -H "X-Api-Key: mySecretKey" \
    ' \
  -H "Content-Type: application/json"   https://api.easypnr.com/v4/decode
 ```
-
-
-> The above command returns JSON structured like this:
-
 ```json
 {
   "persons": [
@@ -148,21 +142,39 @@ curl -i -X POST -H "X-Api-Key: mySecretKey" \
 }
 ```
 
-Decode a PNR.
-
-### Request
-
 `POST https://api.easypnr.com/v4/decode`
 
+Decode a PNR.
+
 At the `BODY` of the `POST` submit your encoded PNR as **plain text**.
-
-### Response
-
-The response is the decoded PNR.
 
 <!-- aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside-->
+
+## /airports
+
+Methods to retrieve airport data.
+
+
+```curl
+curl -i -X GET -H "X-Api-Key: mySecretKey"  https://api.easypnr.com/v4/airport/FLN
+```
+```json
+{
+	"locationName": "Hercílio Luz International Airport",
+	"location": "Florianópolis, Santa Catarina",
+	"country": "Brazil",
+	"iataCode": "FLN"
+}
+```
+
+Method | Path                  | Description                         | Parameters
+------ | --------------        | ------------------------------------|---------
+GET    | `/airports`           | Retrieve all airports with details. | 
+GET    | `/airports/:iataCode` | Retrieve details of an airport.     | The airport [IATA code](https://www.easypnr.com/blog/download-airport-iata-codes/)
+
+
 
 ## /ping
 
@@ -170,19 +182,13 @@ Remember — a happy kitten is an authenticated kitten!
 # Request
 curl -i -X GET -H "X-Api-Key: mySecretKey"  https://api.easypnr.com/v4/ping
 ```
-
 ```text
-# Response
 pong 1478969148631
 ```
-Ping the server.
+Method | Path                  | Description                         | Parameters
+------ | --------------        | ------------------------------------|---------
+GET    | `/ping`               | Ping the server                     |
 
-### Request
-
-`GET https://api.easypnr.com/v4/ping`
-
-### Response
-The above command returns a 'pong' followed by the server timestamp.
 
 # About
-EasyPNR is a decoder and formatter.
+[EasyPNR](https://www.easypnr.com) is a free decoder and formatter for Amadeus, Sabre and Travelport.
