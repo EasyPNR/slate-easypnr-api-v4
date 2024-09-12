@@ -140,7 +140,9 @@ curl -i -X POST -H "X-Api-Key: mySecretKey" \
       "FRPLY": "PARIS GARE LYON"
     }
   },
-  "extraInfo": null
+  "extraInfo": {
+      "decoder_algorithm": "SABRE"
+    }
 }
 ```
 
@@ -149,6 +151,20 @@ curl -i -X POST -H "X-Api-Key: mySecretKey" \
 Decode a PNR.
 
 At the `BODY` of the `POST` submit your encoded PNR as **plain text**.
+
+### Query Parameters
+|Parameter|Default|Description|
+|---------|-------|-----------|
+|Algorithm|(empty)|If specified, enforces the decoding using the selected algorithm. <br>If empty or invalid, let the server detect the best algorithm automatically.|
+
+### Decoder Algorithms
+
+|Name              |Description                                |
+|------------------|-------------------------------------------|
+|AMADEUS           |Decodes Amadeus CDS code                   |
+|SABRE             |Decodes Sabre CDS code                     |
+|TRAVELPORT_GALILEO|Decodes Travelport Galileo CDS code        |
+|SIMPLE_DECODER    |Uses EasyPNR's generic decoding algorithm  |
 
 <!-- aside class="success">
 Remember — a happy kitten is an authenticated kitten!
