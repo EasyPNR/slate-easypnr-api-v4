@@ -153,18 +153,17 @@ Decode a PNR.
 At the `BODY` of the `POST` submit your encoded PNR as **plain text**.
 
 ### Query Parameters
-|Parameter|Default|Description|
-|---------|-------|-----------|
-|Algorithm|(empty)|If specified, enforces the decoding using the selected algorithm. <br>If empty or invalid, let the server detect the best algorithm automatically.|
+Parameter|Default|Description
+---------|-------|-----------
+Algorithm|(empty)|If specified, enforces the decoding using the selected algorithm. <br>If empty or invalid, let the server detect the best algorithm automatically.
 
 ### Decoder Algorithms
-
-|Name              |Description                                |
-|------------------|-------------------------------------------|
-|AMADEUS           |Decodes Amadeus CDS code                   |
-|SABRE             |Decodes Sabre CDS code                     |
-|TRAVELPORT_GALILEO|Decodes Travelport Galileo CDS code        |
-|SIMPLE_DECODER    |Uses EasyPNR's generic decoding algorithm  |
+Name              |Description                                
+------------------|-------------------------------------------
+AMADEUS           |Algorithm to decode PNR from Amadeus CDS.
+SABRE             |Algorithm to decode PNR from Sabre CDS.
+TRAVELPORT_GALILEO|Algorithm to decode PNR from Travelport Galileo CDS.
+SIMPLE_DECODER    |EasyPNR's generic decoding algorithm. Compatible with most CDS's
 
 <!-- aside class="success">
 Remember — a happy kitten is an authenticated kitten!
