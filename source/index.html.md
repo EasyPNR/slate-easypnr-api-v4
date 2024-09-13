@@ -60,17 +60,17 @@ Be careful and keep your API Key secret. Do not share your secret API keys in pu
 
 ```curl
 curl -i -X POST -H "X-Api-Key: mySecretKey" \
- -d $'1.JOHNSON/BRIAN MR  2.JOHNSON/BRENDA MRS                             
-   2  EK 262 Y 08MAR 6 GRUDXB HK1       2  0125 2255   77W E 0 M               
-      ADD ADVANCE PASSENGER INFORMATION IN SSR DOCS                            
-      ADD SSR PCTC TO PROVIDE PAX CONTACT                                      
-      SEE RTSVC                                                                
-   4 TRN 2C  87    6628 AF 26NOV 4 FRLPD FRPLY HK1   1800  2007                 
+ -d $'1.JOHNSON/BRIAN MR  2.JOHNSON/BRENDA MRS
+   2  EK 262 Y 08MAR 6 GRUDXB HK1       2  0125 2255   77W E 0 M
+      ADD ADVANCE PASSENGER INFORMATION IN SSR DOCS
+      ADD SSR PCTC TO PROVIDE PAX CONTACT
+      SEE RTSVC
+   4 TRN 2C  87    6628 AF 26NOV 4 FRLPD FRPLY HK1   1800  2007
      FRLPD/LYON PART DIEU//FRPLY/PARIS GARE LYON     /TGD *
-   5 HTL 1A HK4 CVF 30NOV-01DEC/HOTEL LES ANCOLIES/RUE DES                      
-       GRAVELLES 73120 COURCHEVEL/T-04.79.08.27.66/CF-AATRIP/                     
+   5 HTL 1A HK4 CVF 30NOV-01DEC/HOTEL LES ANCOLIES/RUE DES
+       GRAVELLES 73120 COURCHEVEL/T-04.79.08.27.66/CF-AATRIP/
    ' \
- -H "Content-Type: application/json"   https://api.easypnr.com/v4/decode
+ -H "Content-Type: application/json"   https://api.easypnr.com/v4/decode?algorithm=SABRE
 ```
 ```json
 {
@@ -140,7 +140,9 @@ curl -i -X POST -H "X-Api-Key: mySecretKey" \
       "FRPLY": "PARIS GARE LYON"
     }
   },
-  "extraInfo": null
+  "extraInfo": {
+      "decoder_algorithm": "SABRE"
+    }
 }
 ```
 
@@ -149,6 +151,19 @@ curl -i -X POST -H "X-Api-Key: mySecretKey" \
 Decode a PNR.
 
 At the `BODY` of the `POST` submit your encoded PNR as **plain text**.
+
+### Query Parameters
+Parameter|Default|Description
+---------|-------|-----------
+algorithm|(empty)|When specified, it enforces the decoding to be done using the selected algorithm. <br>When empty or invalid, the server will choose one automatically.
+
+### Supported Decoder Algorithms
+Name              |Description
+------------------|-------------------------------------------
+AMADEUS           |Algorithm to decode PNR from Amadeus GDS.
+SABRE             |Algorithm to decode PNR from Sabre GDS.
+TRAVELPORT_GALILEO|Algorithm to decode PNR from Travelport Galileo GDS.
+SIMPLE_DECODER    |EasyPNR's generic decoding algorithm.
 
 <!-- aside class="success">
 Remember — a happy kitten is an authenticated kitten!
@@ -173,7 +188,7 @@ curl -i -X GET -H "X-Api-Key: mySecretKey"  https://api.easypnr.com/v4/airport/F
 
 Method | Path                  | Description                         | Parameters
 ------ | --------------        | ------------------------------------|---------
-GET    | `/airports`           | Retrieve all airports with details. | 
+GET    | `/airports`           | Retrieve all airports with details. |
 GET    | `/airports/:iataCode` | Retrieve details of an airport.     | The airport [IATA code](https://www.easypnr.com/blog/download-airport-iata-codes/)
 
 
