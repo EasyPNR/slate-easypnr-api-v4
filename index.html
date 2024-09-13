@@ -42,7 +42,7 @@
 .highlight .cs {
   color: #75715e;
 }
-.highlight .c, .highlight .cd {
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
   color: #75715e;
 }
 .highlight .err {
@@ -126,7 +126,7 @@
 .highlight .s1 {
   color: #e6db74;
 }
-.highlight .s {
+.highlight .s, .highlight .sa, .highlight .dl {
   color: #e6db74;
 }
 .highlight .na {
@@ -141,41 +141,52 @@
 .highlight .ne {
   color: #a6e22e;
 }
-.highlight .nf {
+.highlight .nf, .highlight .fm {
   color: #a6e22e;
 }
 .highlight .vc {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight .nn {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight .nl {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight .ni {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight .bp {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight .vg {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight .vi {
   color: #ffffff;
+  background-color: #272822;
 }
-.highlight .nv {
+.highlight .nv, .highlight .vm {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight .w {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight .n, .highlight .py, .highlight .nx {
   color: #ffffff;
+  background-color: #272822;
 }
 .highlight .ow {
   color: #f92672;
@@ -196,20 +207,20 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all.js"></script>
+    <link href="stylesheets/screen-bcd3675c.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-c427a123.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-e77be85d.js"></script>
   </head>
 
   <body class="index" data-languages="[&quot;curl&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" alt="Navbar" />
+        <img src="images/navbar-cad8cdcb.png" alt="" />
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+      <img src="images/logo-76694312.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="curl">curl</a>
         </div>
@@ -261,8 +272,8 @@
 <blockquote>
 <p>API Endpoint Version 4</p>
 </blockquote>
-<pre class="highlight plaintext"><code>http://api.easypnr.com/v4/
-</code></pre>
+<div class="highlight"><pre class="highlight plaintext"><code>http://api.easypnr.com/v4/
+</code></pre></div>
 <p>Welcome to the <strong>EasyPNR API v4</strong> documentation! Following the further instructions you will be able to decode Amadeus, Sabre and Travelport <a href="http://www.easypnr.com/blog/what-is-a-pnr">PNR</a> directly on your application.</p>
 
 <p>The <strong>EasyPNR API</strong> is a REST Server available at the endpoint <a href="http://api.easypnr.com/v4/">http://api.easypnr.com/v4</a>.</p>
@@ -282,115 +293,155 @@
 <blockquote>
 <p>To use the Web Services, you must pass <strong>your API Token</strong> on all requests:</p>
 </blockquote>
-<pre class="highlight plaintext"><code># Example of a request using an API Key
+<div class="highlight"><pre class="highlight plaintext"><code># Example of a request using an API Key
 curl -i -X POST -h "X-Api-Key: mySecretKey" https://api.easypnr.com/v4/ping
-</code></pre>
+</code></pre></div>
 <p>To use the Web Services, you must have an active account on the <a href="http://www.easypnr.com">www.easypnr.com</a> and obtain your <strong>API Key</strong> on <a href="http://www.easypnr.com/my-account">My account</a> page.</p>
 
 <p>Once you have your API Key, you must use it in all Web Service calls, passing your key in an <em>HTTP Header</em> named <strong>&quot;X-Api-Key&quot;</strong>.</p>
 
 <p>Be careful and keep your API Key secret. Do not share your secret API keys in publicly accessible areas such GitHub, client-side code, and so forth.</p>
-<h1 id='api'>API</h1><h2 id='decode'>/decode</h2><pre class="highlight plaintext"><code>curl -i -X POST -H "X-Api-Key: mySecretKey" \
- -d $'1.JOHNSON/BRIAN MR  2.JOHNSON/BRENDA MRS                             
-   2  EK 262 Y 08MAR 6 GRUDXB HK1       2  0125 2255   77W E 0 M               
-      ADD ADVANCE PASSENGER INFORMATION IN SSR DOCS                            
-      ADD SSR PCTC TO PROVIDE PAX CONTACT                                      
-      SEE RTSVC                                                                
-   4 TRN 2C  87    6628 AF 26NOV 4 FRLPD FRPLY HK1   1800  2007                 
+<h1 id='api'>API</h1><h2 id='decode'>/decode</h2><div class="highlight"><pre class="highlight plaintext"><code>curl -i -X POST -H "X-Api-Key: mySecretKey" \
+ -d $'1.JOHNSON/BRIAN MR  2.JOHNSON/BRENDA MRS
+   2  EK 262 Y 08MAR 6 GRUDXB HK1       2  0125 2255   77W E 0 M
+      ADD ADVANCE PASSENGER INFORMATION IN SSR DOCS
+      ADD SSR PCTC TO PROVIDE PAX CONTACT
+      SEE RTSVC
+   4 TRN 2C  87    6628 AF 26NOV 4 FRLPD FRPLY HK1   1800  2007
      FRLPD/LYON PART DIEU//FRPLY/PARIS GARE LYON     /TGD *
-   5 HTL 1A HK4 CVF 30NOV-01DEC/HOTEL LES ANCOLIES/RUE DES                      
-       GRAVELLES 73120 COURCHEVEL/T-04.79.08.27.66/CF-AATRIP/                     
+   5 HTL 1A HK4 CVF 30NOV-01DEC/HOTEL LES ANCOLIES/RUE DES
+       GRAVELLES 73120 COURCHEVEL/T-04.79.08.27.66/CF-AATRIP/
    ' \
- -H "Content-Type: application/json"   https://api.easypnr.com/v4/decode
-</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"persons"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+ -H "Content-Type: application/json"   https://api.easypnr.com/v4/decode?algorithm=SABRE
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"persons"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRIAN"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOHNSON"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MR"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"rawData"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOHNSON/BRIAN MR"</span><span class="w">
+      </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRIAN"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOHNSON"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MR"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"rawData"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOHNSON/BRIAN MR"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRENDA"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOHNSON"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MRS"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"rawData"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOHNSON/BRENDA MRS"</span><span class="w">
+      </span><span class="nl">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BRENDA"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOHNSON"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MRS"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"rawData"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JOHNSON/BRENDA MRS"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"flightInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"flights"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"flightInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"flights"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"iataCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EK"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Emirates"</span><span class="w">
+        </span><span class="nl">"company"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"iataCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EK"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Emirates"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"departureTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-08 01:25:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"landingTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-08 22:55:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"flight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"262"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"departureAirport"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"iataCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GRU"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Guarulhos International Airport - Guarulhos, São Paulo, Brazil"</span><span class="w">
+        </span><span class="nl">"departureTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-08 01:25:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"landingTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-08 22:55:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"flight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"262"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"departureAirport"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"iataCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GRU"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Guarulhos International Airport - Guarulhos, São Paulo, Brazil"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-        </span><span class="s2">"seatInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-        </span><span class="s2">"landingAirport"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"iataCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DXB"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dubai International Airport - Dubai, United Arab Emirates"</span><span class="w">
+        </span><span class="nl">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="nl">"seatInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="nl">"landingAirport"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"iataCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DXB"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dubai International Airport - Dubai, United Arab Emirates"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="nl">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"hotelInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"hotels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"hotelInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"hotels"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HOTEL LES ANCOLIES"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RUE DES GRAVELLES 73120 COURCHEVEL"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"checkIn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-30"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"checkOut"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-01"</span><span class="w">
+        </span><span class="nl">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HOTEL LES ANCOLIES"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RUE DES GRAVELLES 73120 COURCHEVEL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"checkIn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-30"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"checkOut"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-12-01"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="nl">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"trainInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"trains"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="nl">"trainInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"trains"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"departureTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-26 18:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"arrivingTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-26 20:07"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"departureStationCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FRLPD"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"arrivingStationCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FRPLY"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6628"</span><span class="w">
+        </span><span class="nl">"departureTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-26 18:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"arrivingTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-26 20:07"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"departureStationCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FRLPD"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"arrivingStationCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FRPLY"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6628"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"stationNames"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"FRLPD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LYON PART DIEU"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"FRPLY"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PARIS GARE LYON"</span><span class="w">
+    </span><span class="nl">"stationNames"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"FRLPD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LYON PART DIEU"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"FRPLY"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PARIS GARE LYON"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="nl">"extraInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"decoder_algorithm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SABRE"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p><code>POST https://api.easypnr.com/v4/decode</code></p>
 
 <p>Decode a PNR.</p>
 
 <p>At the <code>BODY</code> of the <code>POST</code> submit your encoded PNR as <strong>plain text</strong>.</p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>algorithm</td>
+<td>(empty)</td>
+<td>When specified, it enforces the decoding to be done using the selected algorithm. <br>When empty or invalid, the server will choose one automatically.</td>
+</tr>
+</tbody></table>
+<h3 id='supported-decoder-algorithms'>Supported Decoder Algorithms</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AMADEUS</td>
+<td>Algorithm to decode PNR from Amadeus GDS.</td>
+</tr>
+<tr>
+<td>SABRE</td>
+<td>Algorithm to decode PNR from Sabre GDS.</td>
+</tr>
+<tr>
+<td>TRAVELPORT_GALILEO</td>
+<td>Algorithm to decode PNR from Travelport Galileo GDS.</td>
+</tr>
+<tr>
+<td>SIMPLE_DECODER</td>
+<td>EasyPNR&#39;s generic decoding algorithm.</td>
+</tr>
+</tbody></table>
 
 <!-- aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside-->
 <h2 id='airports'>/airports</h2>
 <p>Methods to retrieve airport data.</p>
-<pre class="highlight plaintext"><code>curl -i -X GET -H "X-Api-Key: mySecretKey"  https://api.easypnr.com/v4/airport/FLN
-</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"locationName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hercílio Luz International Airport"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florianópolis, Santa Catarina"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brazil"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"iataCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FLN"</span><span class="w">
+<div class="highlight"><pre class="highlight plaintext"><code>curl -i -X GET -H "X-Api-Key: mySecretKey"  https://api.easypnr.com/v4/airport/FLN
+</code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"locationName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hercílio Luz International Airport"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Florianópolis, Santa Catarina"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brazil"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"iataCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FLN"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <table><thead>
 <tr>
 <th>Method</th>
@@ -412,10 +463,10 @@ Remember — a happy kitten is an authenticated kitten!
 <td>The airport <a href="https://www.easypnr.com/blog/download-airport-iata-codes/">IATA code</a></td>
 </tr>
 </tbody></table>
-<h2 id='ping'>/ping</h2><pre class="highlight plaintext"><code># Request
+<h2 id='ping'>/ping</h2><div class="highlight"><pre class="highlight plaintext"><code># Request
 curl -i -X GET -H "X-Api-Key: mySecretKey"  https://api.easypnr.com/v4/ping
-</code></pre><pre class="highlight plaintext"><code>pong 1478969148631
-</code></pre>
+</code></pre></div><div class="highlight"><pre class="highlight plaintext"><code>pong 1478969148631
+</code></pre></div>
 <table><thead>
 <tr>
 <th>Method</th>
