@@ -70,7 +70,7 @@ curl -i -X POST -H "X-Api-Key: mySecretKey" \
    5 HTL 1A HK4 CVF 30NOV-01DEC/HOTEL LES ANCOLIES/RUE DES
        GRAVELLES 73120 COURCHEVEL/T-04.79.08.27.66/CF-AATRIP/
    ' \
- -H "Content-Type: application/json"   https://api.easypnr.com/v4/decode
+ -H "Content-Type: application/json"   https://api.easypnr.com/v4/decode?algorithm=SABRE
 ```
 ```json
 {
@@ -155,7 +155,7 @@ At the `BODY` of the `POST` submit your encoded PNR as **plain text**.
 ### Query Parameters
 Parameter|Default|Description
 ---------|-------|-----------
-Algorithm|(empty)|When specified, it enforces the decoding to be done using the selected algorithm. <br>When empty or invalid, the server will choose one automatically.
+algorithm|(empty)|When specified, it enforces the decoding to be done using the selected algorithm. <br>When empty or invalid, the server will choose one automatically.
 
 ### Supported Decoder Algorithms
 Name              |Description
